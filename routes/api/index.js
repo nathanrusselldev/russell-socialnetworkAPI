@@ -8,6 +8,3 @@ router.use("/thoughts", thoughtRoutes);
 
 
 module.exports = router;
-
-
-module.exports = router;

@@ -1,5 +1,4 @@
-const { Schema, model } = require('mongoose');
-const thoughtSchema = require('./thought');
+const { Schema, model, } = require('mongoose');
 
 const userSchema = new Schema({
     
@@ -15,14 +14,18 @@ const userSchema = new Schema({
             unique: true,
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
         },
-        thoughts: [{
-            type: Schema.Types.ObjectId,
-            ref: 'thoughtSchema'
-        }],
-        friends: [{
-            type: Schema.Types.ObjectId,
-            ref: 'userSchema'
-        }]
+        thoughts: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: "Thought"
+			},
+		],
+		friends: [
+			{
+				type: Schema.Types.ObjectId,
+				ref: "User"
+			},
+		],
     },
         {
             toJSON: {
